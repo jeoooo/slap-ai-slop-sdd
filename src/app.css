@@ -1,0 +1,98 @@
+:root {
+	--font-sans: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--font-serif: 'Playfair Display', Georgia, serif;
+
+	--color-bg-base: #0c0805;
+	--color-bg-elevated: #160f0a;
+	--color-bg-card: #1c140d;
+	--color-bg-card-hover: #261b12;
+	--color-bg-glass: rgba(24, 17, 12, 0.85);
+
+	--color-border: #38271a;
+	--color-border-subtle: #261a11;
+	--color-border-gold: rgba(243, 175, 61, 0.35);
+
+	--color-gold-primary: #f2a93b;
+	--color-gold-glow: #ffc252;
+	--color-gold-dark: #b87714;
+	--color-durian-cream: #fae4b5;
+	--color-durian-flesh: #ffe89e;
+	--color-leaf-emerald: #2e8b57;
+	--color-leaf-dark: #1b5233;
+
+	--color-text-primary: #fbf7f0;
+	--color-text-secondary: #c2b1a1;
+	--color-text-tertiary: #877464;
+
+	--shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.4);
+	--shadow-glow: 0 0 35px rgba(242, 169, 59, 0.18);
+	--shadow-card: 0 12px 30px rgba(0, 0, 0, 0.5);
+
+	--radius-sm: 8px;
+	--radius-md: 14px;
+	--radius-lg: 22px;
+	--radius-full: 9999px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: var(--font-sans);
+	background-color: var(--color-bg-base);
+	color: var(--color-text-primary);
+	color-scheme: dark;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	min-height: 100vh;
+	line-height: 1.6;
+	overflow-x: hidden;
+	background: radial-gradient(circle at 50% 0%, #20140b 0%, #0c0805 60%);
+	background-attachment: fixed;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	font-family: inherit;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+::selection {
+	background: var(--color-gold-primary);
+	color: #0c0805;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--color-border);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-gold-dark);
+}
