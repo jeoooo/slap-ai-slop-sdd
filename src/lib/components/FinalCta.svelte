@@ -3,7 +3,7 @@
 		reserveEmail?: string;
 	}
 
-	let { reserveEmail = 'reserve@durianocoffee.demo' }: Props = $props();
+	let { reserveEmail = 'hello@durianocoffee.demo' }: Props = $props();
 </script>
 
 <section class="section section-dark final-cta-section" aria-labelledby="final-cta-title">

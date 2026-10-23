@@ -3,7 +3,7 @@
 		reserveEmail?: string;
 	}
 
-	let { reserveEmail = 'reserve@durianocoffee.demo' }: Props = $props();
+	let { reserveEmail = 'hello@durianocoffee.demo' }: Props = $props();
 </script>
 
 <section class="section hero-section" aria-labelledby="hero-title">
