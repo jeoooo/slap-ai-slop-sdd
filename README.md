@@ -8,12 +8,15 @@ Spec-driven development: write the rules and the spec first, then let the agent 
 |---|---|---|
 | `CLAUDE.md`, `AGENTS.md` | Rules file: scope, stack, rules, brand tokens. Identical copies. | Claude Code, Antigravity CLI |
 | `.claude/skills/landing-page-qa/SKILL.md`, `.agents/skills/landing-page-qa/SKILL.md` | Checklist skill for checking the page. Identical copies. | Claude Code, Antigravity CLI |
+| `DESIGN.md` | Visual and interaction rules: color, type, layout, components, motion. Read before UI work. | Both |
 | `.claude/agents/frontend-developer.md` | Subagent that builds the page, using Impeccable for design | Claude Code |
 | `.claude/agents/spec-reviewer.md` | Subagent that reports spec mismatches only | Claude Code |
 | `.claude/agents/gitops.md` | Subagent that commits with Conventional Commits | Claude Code |
-| `demo/1-constitution-prompt.md`, `demo/2-specify-prompt.md`, `demo/3-plan-prompt.md` | The three prompts, in order | Both |
+| `.claude/agents/documenter.md` | Subagent that writes the website docs to `docs/website.md` | Claude Code |
+| `demo/run-all-prompt.md` | One prompt that runs every phase, from constitution to docs | Both |
+| `demo/1-constitution-prompt.md`, `demo/2-specify-prompt.md`, `demo/3-plan-prompt.md` | The three phase inputs, in order. The one-prompt run reads them. | Both |
 
-The Antigravity CLI has no user-defined subagents, so it gets the same three jobs as plain prompts (see "Run it"). Keep each pair of identical copies in sync.
+The Antigravity CLI has no user-defined subagents, so it gets the same four jobs as plain prompts (see "Run it"). Keep each pair of identical copies in sync.
 
 ## Prerequisites
 
@@ -56,7 +59,29 @@ The Antigravity CLI has no user-defined subagents, so it gets the same three job
    git tag demo-2-starter
    ```
 
-## Chapters
+## Run it (one prompt)
+
+This is the main path. It keeps the demo short: one message, and the agent does every phase.
+
+1. Set up as above, then create one branch for the run: `git switch -c demo-2-run`
+2. Open your agent in this folder and send `demo/run-all-prompt.md` as your only message: type `@demo/run-all-prompt.md` (the agent attaches the file), or paste its contents.
+3. It runs six phases in order (constitution, specify, plan, tasks, implement, review) and then writes `docs/website.md`. It commits after each phase with Conventional Commits and never pushes. Don't add anything else while it runs.
+4. Run what it built (see "Run what it built"), then mark the result (see "Mark the final result").
+
+The phases still map to the six chapters below, so you can compare them. To keep chapter tags, tag each phase commit by hand afterwards:
+
+```sh
+git log --oneline          # find the commit for each phase, oldest first
+git tag demo-2-ch1 <sha>   # constitution; repeat for ch2 to ch6
+```
+
+The run depends on the agent being able to use the Spec Kit commands from a prompt. If it can't, it writes `specs/*.md` itself, as in "No Spec Kit?" below. Do a dry run before you record.
+
+## Step by step (optional)
+
+Use this path to run each chapter on its own, for example to show one phase in detail. The one-prompt run covers the same ground.
+
+### Chapters
 
 The demo runs in six chapters. Each chapter has its own branch, built on the one before, and a tag on its last commit, so you can check out any point or diff two chapters.
 
@@ -67,16 +92,16 @@ The demo runs in six chapters. Each chapter has its own branch, built on the one
 | 3. Plan | `demo-2-ch3-plan` | `demo-2-ch3` | The implementation plan |
 | 4. Tasks | `demo-2-ch4-tasks` | `demo-2-ch4` | The task list |
 | 5. Implement | `demo-2-ch5-implement` | `demo-2-ch5` | The page, built |
-| 6. Review | `demo-2-ch6-review` | `demo-2-ch6` | QA and review fixes: the final result |
+| 6. Review | `demo-2-ch6-review` | `demo-2-ch6` | QA and review fixes, plus `docs/website.md`: the final result |
 
 For every chapter, do the same four things:
 
 1. **Create the chapter branch** from the previous one (chapter 1 starts from `demo-2`): `git switch -c demo-2-ch1-constitution`
-2. **Run the step** (see "Run it" below).
+2. **Run the step** (see "Run it step by step" below).
 3. **Commit it.** Claude Code: `Use the gitops subagent to commit the work.` Antigravity CLI: `Commit the work using Conventional Commits.` Expect messages like `docs: add constitution` or `feat(hero): add headline and reserve-a-pack cta`. Neither agent pushes.
 4. **Tag it**: `git tag demo-2-ch1`
 
-## Run it (with Spec Kit)
+### Run it step by step (with Spec Kit)
 
 1. **Install Spec Kit and add it to this folder.** It needs [uv](https://docs.astral.sh/uv/).
 
@@ -113,9 +138,14 @@ For every chapter, do the same four things:
    - **Claude Code:** ask it to use the `spec-reviewer` subagent, then `fix the failures the spec-reviewer reported`.
    - **Antigravity CLI:** ask `Review the page against the spec and list only the mismatches`, then `fix those mismatches`.
 
-   Fix only what the review flags. Then commit and tag chapter 6 as above.
+   Fix only what the review flags. Then write the docs:
 
-## No Spec Kit?
+   - **Claude Code:** `Use the documenter subagent to document the website.`
+   - **Antigravity CLI:** `Read the spec, CLAUDE.md and the built page, then write docs/website.md: overview, how to run it, file structure, each page section, the Ark UI parts, brand tokens, accessibility and SEO, and constraints. Describe only what the code does. Edit no other file.`
+
+   Check that `docs/website.md` exists and matches the page. Then commit and tag chapter 6 as above.
+
+### No Spec Kit?
 
 The prompts are plain text, so the method works in any agent without the CLI. Skip the install and give each step as a plain instruction that says where to write the result, followed by the contents of the same file:
 
@@ -142,7 +172,7 @@ Open the URL it prints. For a production check, run `npm run build && npm run pr
 Chapter 6 is the final result. Give it the usual names too:
 
 ```sh
-git status                  # should be clean
+git status                  # should be clean, with docs/website.md committed
 git branch after-demo-2
 git tag demo-2-after
 ```

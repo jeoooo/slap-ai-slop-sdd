@@ -5,7 +5,7 @@ description: Use after building or changing the landing page to check it against
 
 Check src/routes/+page.svelte, src/lib/components/*, src/app.css and src/app.html against this list and report PASS/FAIL per item with the file and line or selector:
 1. Brand matches (name, palette, fonts, tone)
-2. All 7 sections present, in order
+2. All 8 sections present, in order (the DevFest Davao 2026 section sits between the final CTA and the footer)
 3. No lorem ipsum, no health claims
 4. One <h1>, correct heading order
 5. All images have meaningful alt
@@ -14,6 +14,6 @@ Check src/routes/+page.svelte, src/lib/components/*, src/app.css and src/app.htm
 8. Visible keyboard focus; the dialog traps focus, closes on Esc and returns focus; the accordion works with the keyboard
 9. Meta description and Open Graph tags (in <svelte:head>)
 10. Primary CTA in hero and final section, and it works
-11. Stack: only SvelteKit and Ark UI; no backend files (+server, form actions), no .env, no external API calls
+11. Stack: only SvelteKit and Ark UI; no backend files (+server, form actions), no .env, no external API calls (plain outbound links are fine)
 12. Interactive parts use Ark UI (Dialog, Accordion), not hand-rolled widgets
 Do not fix anything. Report only.
