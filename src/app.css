@@ -252,7 +252,7 @@ a:hover {
 	padding: 2rem;
 	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
 	border: 1px solid rgba(32, 33, 36, 0.12);
-	animation: scaleUp 0.18s ease-out;
+	animation: fadeIn 0.18s ease-out;
 }
 
 [data-scope="dialog"][data-part="title"] {

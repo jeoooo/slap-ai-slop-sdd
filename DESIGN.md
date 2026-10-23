@@ -6,7 +6,7 @@ Visual and interaction rules for the landing page. The spec says what the page c
 
 Google-inspired: clean, bright, friendly, lots of white space, soft rounded shapes, Material-style surfaces. The brand is still Duriano Coffee, so the copy stays playful and a little cheeky about the smell. The theme is visual only.
 
-Do not use: the Google logo, the word "Google" as a brand, the multicolor "G", Google product icons or any other Google mark. Avoid stock-coffee clichés (steam swirls, bean piles), heavy gradients, glassmorphism and drop-shadow-heavy cards.
+Do not use: the Google logo, the word "Google" as a brand, the multicolor "G", Google product icons or any other Google mark of our own. The DevFest banner image is the one exception: it is the event's own artwork, used unchanged. Avoid stock-coffee clichés (steam swirls, bean piles), heavy gradients, glassmorphism and drop-shadow-heavy cards.
 
 ## Color
 
@@ -66,6 +66,7 @@ Mostly white and `--surface`, with one `--ink` section for rhythm. The four bran
 
 - Radius: 1.75rem on cards and dialogs, 999px on buttons and chips. Rounded, never sharp.
 - Depth comes from tonal surfaces (`--surface` on white) and a 1px border in `--ink` at low opacity. At most one soft shadow, on the dialog.
+- Pictures: two images only. (1) The Story section image, linked from the URL in the spec (right column from 768 px, below the text on mobile). (2) The DevFest banner, the event's own promo, saved at `static/devfest-banner.webp` and shown at the top of the DevFest band. No other photos or stock images, and no empty placeholder columns. Other decoration is CSS shapes and inline SVG.
 - Imagery is CSS and inline SVG or emoji. Simple round and pill shapes in the four brand colors may echo durian spikes. Meaningful images have alt text; decorative shapes use `aria-hidden="true"`.
 
 ## Components
@@ -76,7 +77,7 @@ Mostly white and `--surface`, with one `--ink` section for rhythm. The four bran
 - **Dialog** (Ark UI): centered, max width 32rem, `--ink` backdrop at about 50% opacity, a visible close button labelled for assistive tech.
 - **Accordion** (Ark UI): full-width rows separated by 1px rules, a chevron that rotates when open, step number in a small tinted circle. One item open at a time.
 - **Review quote**: tinted card, quote text, name. The "Sample reviews for demo." label sits above the group, always visible.
-- **DevFest band**: a full-width `--surface` band with the four-dot brand motif, a small "Coming soon · November 2026" chip (yellow tint), a short h2, one primary "Register now" button, then three round social icon links (inline SVG, 44 px targets, each with an accessible name). It is the one place the page talks about something outside the coffee; keep it light and short. It sits between the final CTA and the footer, so its button is a secondary-weight pill to avoid a second primary button in view.
+- **DevFest band**: a full-width `--surface` band with the four-dot brand motif, the DevFest banner image (`/devfest-banner.webp`, full width up to 56rem, rounded, with the alt text from the spec), a small "Coming soon · November 2026" chip (yellow tint), a short h2, one primary "Register now" button. No social icons here: the GDG Davao socials are plain text links in the footer "Connect with GDG Davao" list (Facebook, GitHub, LinkedIn), each with an accessible name. It is the one place the page talks about something outside the coffee; keep it light and short. It sits between the final CTA and the footer, so its button is a secondary-weight pill to avoid a second primary button in view.
 - **Footer**: `--ink` background, white text, always showing "Demo site, not a real business." and "Google-inspired theme, not affiliated with Google."
 
 Style Ark UI parts with `[data-scope="dialog"][data-part="content"]` style selectors. Do not override their behavior.

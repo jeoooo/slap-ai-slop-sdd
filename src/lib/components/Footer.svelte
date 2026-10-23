@@ -31,16 +31,34 @@
 			</div>
 
 			<div class="footer-social-section">
-				<strong class="footer-heading">Connect (Placeholders)</strong>
-				<ul class="footer-social-list" aria-label="Social media placeholders">
+				<strong class="footer-heading">Connect with GDG Davao</strong>
+				<ul class="footer-social-list" aria-label="GDG Davao social channels">
 					<li>
-						<a href="#instagram" class="footer-social-link">Instagram</a>
+						<a
+							href="https://www.facebook.com/gdgdavao"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer-social-link"
+							aria-label="GDG Davao on Facebook">Facebook</a
+						>
 					</li>
 					<li>
-						<a href="#twitter" class="footer-social-link">X / Twitter</a>
+						<a
+							href="https://github.com/gdgdavao"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer-social-link"
+							aria-label="GDG Davao on GitHub">GitHub</a
+						>
 					</li>
 					<li>
-						<a href="#tiktok" class="footer-social-link">TikTok</a>
+						<a
+							href="https://www.linkedin.com/company/gdg-davao/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer-social-link"
+							aria-label="GDG Davao on LinkedIn">LinkedIn</a
+						>
 					</li>
 				</ul>
 			</div>

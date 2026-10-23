@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Dialog } from '@ark-ui/svelte/dialog';
+	import { Portal } from '@ark-ui/svelte/portal';
 
 	export interface Product {
 		id: string;
@@ -51,6 +52,7 @@
 					Details
 				</Dialog.Trigger>
 
+				<Portal>
 				<Dialog.Backdrop />
 
 				<Dialog.Positioner>
@@ -93,6 +95,7 @@
 						</Dialog.CloseTrigger>
 					</Dialog.Content>
 				</Dialog.Positioner>
+				</Portal>
 			</Dialog.Root>
 		</div>
 	</div>

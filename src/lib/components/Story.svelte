@@ -2,7 +2,7 @@
 </script>
 
 <section class="section section-surface story-section" aria-labelledby="story-title">
-	<div class="container">
+	<div class="container story-grid">
 		<div class="story-content">
 			<div class="brand-dots" aria-hidden="true">
 				<span class="brand-dot dot-yellow"></span>
@@ -22,6 +22,16 @@
 				</p>
 			</div>
 		</div>
+
+		<figure class="story-figure">
+			<img
+				src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShaSOX18UCBMi7_x_5FiTctMhrrDVU47oUehiJKSZLQA77nFS2rW3XxnCh&s=10"
+				alt="Golden sculpture of a family carved inside a giant split-open durian, under a bright Davao sky"
+				width="556"
+				height="552"
+				loading="lazy"
+			/>
+		</figure>
 	</div>
 </section>
 
@@ -29,6 +39,27 @@
 	.story-section {
 		border-top: 1px solid rgba(32, 33, 36, 0.08);
 		border-bottom: 1px solid rgba(32, 33, 36, 0.08);
+	}
+
+	.story-grid {
+		display: grid;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.story-figure img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: var(--radius-card);
+		border: 1px solid rgba(32, 33, 36, 0.12);
+	}
+
+	@media (min-width: 768px) {
+		.story-grid {
+			grid-template-columns: 1.2fr 1fr;
+			gap: 3rem;
+		}
 	}
 
 	.story-content {
