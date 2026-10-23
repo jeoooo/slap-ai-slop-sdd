@@ -14,6 +14,7 @@
 - Mobile-first. One <h1>, heading order never skips, meaningful alt text, text contrast >= 4.5:1, visible keyboard focus.
 - Real copy only: no lorem ipsum, no health claims. Sample reviews labelled "Sample reviews for demo."
 - The DevFest Davao 2026 section is a real event promoted as an easter egg: use only the facts in the spec (coming soon, November 2026, registration open, the four links). Outbound links use `target="_blank"` with `rel="noopener noreferrer"`.
+- Pictures: two images only, both already chosen. (1) The Story section image, linked from the URL in the spec (right column from 768 px, below the text on mobile). (2) The DevFest banner, the event's own promo, saved at `static/devfest-banner.webp` and shown at the top of the DevFest band. No other photos or stock images, and no empty placeholder columns. Other decoration is CSS shapes and inline SVG.
 - Fictional brand. Footer says "Demo site, not a real business." and "Google-inspired theme, not affiliated with Google."
 - Before saying you are done, run `npm run check` and `npm run build` and fix any errors.
 - Read `DESIGN.md` before any UI work and follow it for color, type, layout, components and interaction. Spec first, then `CLAUDE.md` tokens, then `DESIGN.md`.
@@ -23,4 +24,4 @@
 ## Brand tokens (use as CSS variables in src/app.css)
 - --blue: #4285F4; --red: #EA4335; --yellow: #FBBC05; --green: #34A853 (decoration only, never text); --blue-text: #1967D2 (links, text, primary button); --ink: #202124; --grey: #5F6368; --surface: #F8F9FA; --white: #FFFFFF
 - Fonts: Google Sans for headings and body (Google Fonts, no API key), with system sans-serif fallbacks
-- Theme: Google-inspired (Google Sans, the four Google brand colors on white, Material-style rounded shapes). Visual theme only: no Google logo, name or product marks.
+- Theme: Google-inspired (Google Sans, the four Google brand colors on white, Material-style rounded shapes). Visual theme only: no Google logo, name or product marks of our own. The only exception is the DevFest banner image, which is the event's own artwork and is used unchanged.

@@ -8,6 +8,7 @@ Spec-driven development: write the rules and the spec first, then let the agent 
 |---|---|---|
 | `CLAUDE.md`, `AGENTS.md` | Rules file: scope, stack, rules, brand tokens. Identical copies. | Claude Code, Antigravity CLI |
 | `.claude/skills/landing-page-qa/SKILL.md`, `.agents/skills/landing-page-qa/SKILL.md` | Checklist skill for checking the page. Identical copies. | Claude Code, Antigravity CLI |
+| `static/devfest-banner.webp` | The DevFest Davao 2026 promo banner. Part of the inputs; the spec points the DevFest band at it. Step 2 of "Set up" keeps it. | Both |
 | `DESIGN.md` | Visual and interaction rules: color, type, layout, components, motion. Read before UI work. | Both |
 | `.claude/agents/frontend-developer.md` | Subagent that builds the page, using Impeccable for design | Claude Code |
 | `.claude/agents/spec-reviewer.md` | Subagent that reports spec mismatches only | Claude Code |

@@ -8,7 +8,7 @@ Stack: SvelteKit (Svelte 5, TypeScript) with Ark UI (`@ark-ui/svelte`). The proj
 - Use the Ark UI Dialog for product details and the Ark UI Accordion for the how-to steps. Import from the package subpaths (for example `@ark-ui/svelte/dialog` and `@ark-ui/svelte/accordion`) and confirm the exact names against the installed package.
 - Global CSS in `src/app.css` with CSS variables for the brand tokens. Ark UI is unstyled, so style its parts with the `data-scope` and `data-part` attributes.
 - Load Google Sans (weights 400, 500, 700) from Google Fonts in `src/app.html` (no API key needed), with system font fallbacks. Put the title, meta description and Open Graph tags in `<svelte:head>`.
-- Use CSS and inline SVG or emoji for imagery so there is no dependency on a stock-photo service.
+- The Story section uses one `<img>` linked from the URL in the spec, with width, height, alt text and `loading="lazy"`, in a two-column layout from 768 px. The DevFest band uses one `<img src="/devfest-banner.webp">` (a file already in `static/`) with width, height, alt text and `loading="lazy"`. Everything else uses CSS and inline SVG or emoji, with no stock-photo service.
 - No backend, no .env.
 - Finish by running `npm run check` and `npm run build`.
 
