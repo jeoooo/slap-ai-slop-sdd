@@ -15,7 +15,7 @@
 			src="/devfest-banner.webp"
 			alt="DevFest Davao 2026 banner by Google Developer Group Davao: Build, Secure, Scale: Developers and Builders in the Agentic Era."
 			width="1600"
-			height="406"
+			height="400"
 			loading="lazy"
 		/>
 
